@@ -2,7 +2,7 @@
    Common -- default
    ========================================================================== */
 
-/* heading
+/* headings
    ========================================================================== */
 
 h1,
@@ -11,6 +11,7 @@ h3,
 h4,
 h5,
 h6 {
+
   &:first-child {
     margin-top: 0;
   }
@@ -46,6 +47,7 @@ p {
   }
 }
 
+
 /* button
    ========================================================================== */
 
@@ -71,42 +73,39 @@ svg {
 
 }
 
-/* list
+/* lists
    ========================================================================== */
 
-ul,
-ol {
-  margin: 0;
+ul, ol {
   padding: 0;
+  margin: 0;
   list-style: none;
 }
 
-/* link
+/* links
    ========================================================================== */
 
 a {
   text-decoration: none;
 }
 
-/* form
+/* Elements form
    ========================================================================== */
 
-form {
-  width: 100%;
+// убрать стрелки для Chrome
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-/* form fields
-   ========================================================================== */
-
-input,
-textarea,
-select {
-  background-color: transparent;
-  border: none;
-  outline: none;
-  resize: none;
-
-  &:focus {
-    outline: none;
-  }
+// убрать стрелки для Firefox
+input[type="number"] {
+  -moz-appearance: textfield;
 }
+
+input[type="number"]:hover,
+input[type="number"]:focus {
+  -moz-appearance: number-input;
+}
+
