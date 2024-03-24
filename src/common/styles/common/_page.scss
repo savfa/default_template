@@ -1,0 +1,46 @@
+/* ==========================================================================
+   Common -- page
+   ========================================================================== */
+
+.page {
+  $root: ".page";
+  //@include media-breakpoint-down(md) {}
+
+  ////@include main-container;
+
+  flex-grow: 1;
+  overflow: hidden;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__base {
+    @include main-shape-bg-primary;
+
+    display: flex;
+    flex-grow: 1;
+  }
+
+  &__main {
+    flex-grow: 1;
+
+    &--inner {
+      @include main-shape-bg-secondary;
+    }
+  }
+
+  &__section {
+    margin-bottom: px-to-rem(128px);
+
+    > * {
+      flex-grow: 1;
+    }
+
+    @include media-breakpoint-down(md) {
+      margin-bottom: px-to-rem(64px);
+    }
+  }
+}

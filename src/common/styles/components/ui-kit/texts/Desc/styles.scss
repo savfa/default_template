@@ -1,0 +1,20 @@
+/* ==========================================================================
+   Ui-kit elements -- Desc
+   ========================================================================== */
+
+.desc {
+  $root: &;
+  //@include media-breakpoint-down(md) {}
+
+  @include media-breakpoint-down(md) {
+    @include desc--size($root, "m");
+  }
+
+  @extend %font-weight-medium-500;
+  @extend %data-font-weight-group;
+
+  @include desc-sizes($root);
+  @include desc-color-themes($root);
+  @include desc--size($root, "l");
+  @include desc--color-theme($root, "dark-primary");
+}

@@ -1,0 +1,40 @@
+// =============================================================================
+// Mixins -- Desc size
+// =============================================================================
+
+//
+// Mixin properties
+// --------------------------------------------------------------------------
+
+@mixin desc--size($root, $size, $important: null) {
+  @if $size == "l" {
+    font-size: px-to-rem(17px) $important;
+    line-height: 1.6;
+  }
+
+  @if $size == "m" {
+    font-size: px-to-rem(14px) $important;
+  }
+
+  @if $size == "s" {
+    font-size: px-to-rem(12px) $important;
+  }
+}
+
+//
+// Mixin data-attributes
+// --------------------------------------------------------------------------
+
+$descSizes: (
+  "l",
+  "m",
+  "s",
+);Mixindata-attributes$descSizes
+
+@mixin desc-sizes($root) {
+  @each $key in $descSizes {
+    &[data-size="#{$key}"] {
+      @include desc--size($root, $key, !important);
+    }
+  }
+}

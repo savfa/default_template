@@ -1,0 +1,30 @@
+/* ==========================================================================
+   Common -- base
+   ========================================================================== */
+
+html {
+  //@include media-breakpoint-down(lg) {}
+
+  box-sizing: border-box;
+  height: 100%;
+  font-size: $default-font-size;
+}
+
+* {
+  min-width: 0;
+  min-height: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100%;
+  color: $body-color;
+  font-size: $body-font-size;
+  font-family: $body-font-family;
+  background-color: $body-bg;
+}

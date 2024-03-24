@@ -1,0 +1,58 @@
+// =============================================================================
+// Mixins -- IconWrap color theme
+// =============================================================================
+
+//
+// Mixin properties
+// --------------------------------------------------------------------------
+
+@mixin icon-wrap--color-theme($root, $color-theme, $important: null) {
+
+  //blue-primary
+  @if $color-theme == "blue-primary" {
+    background-color: $color-blue-primary;
+    box-shadow: 0 px-to-rem(14px) px-to-rem(40px) px-to-rem(-10px) $color-blue-primary;
+  }
+
+  //blue-primary-light
+  @if $color-theme == "blue-primary-light" {
+    border:px-to-rem(2px) solid $color-blue-primary;
+    //box-shadow: 0 px-to-rem(14px) px-to-rem(40px) px-to-rem(-10px) $color-blue-primary;
+  }
+
+  //gray-tertiary
+  @if $color-theme == "gray-secondary" {
+    background-color: $color-gray-secondary;
+  }
+
+  //gray-tertiary
+  @if $color-theme == "gray-tertiary" {
+    background-color: $color-gray-tertiary;
+    box-shadow: 0 px-to-rem(20px) px-to-rem(45px) px-to-rem(-10px) $color-blue-tertiary;
+  }
+
+  //gray-quaternary
+  @if $color-theme == "gray-quaternary" {
+    background-color: $color-gray-quaternary;
+  }
+}
+
+//
+// Color themes
+// --------------------------------------------------------------------------
+
+$iconWrapColorThemes: (
+  "blue-primary",
+  "blue-primary-light",
+  "gray-secondary",
+  "gray-tertiary",
+  "gray-quaternary",
+);Colorthemes$iconWrapColorThemes
+
+@mixin icon-wrap-color-themes($root) {
+  @each $key in $iconWrapColorThemes {
+    &[data-color-theme="#{$key}"] {
+      @include icon-wrap--color-theme($root, $key);
+    }
+  }
+}

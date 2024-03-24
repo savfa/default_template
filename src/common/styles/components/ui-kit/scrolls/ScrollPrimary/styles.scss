@@ -1,0 +1,181 @@
+/* ==========================================================================
+   Ui-kit elements -- ScrollPrimary
+   ========================================================================== */
+
+.scroll-primary {
+  $root: &;
+
+  @include scroll-primary-color-themes($root);
+  @include scroll-primary--color-theme($root, "");
+  @include scroll-primary-sizes($root);
+  @include scroll-primary--size($root, "l");
+
+  max-height: px-to-rem(260px);
+
+  &.scroll-wrapper {
+    position: relative;
+    width: 100%;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .scroll-wrapper {
+    > .scroll-content {
+      position: relative !important;
+      top: 0;
+      left: 0;
+      box-sizing: content-box !important;
+      width: auto !important;
+      max-width: none !important;
+      height: auto;
+      max-height: none;
+      margin: 0;
+      padding: 0;
+      overflow: scroll !important;
+      border: none !important;
+    }
+
+    > .scroll-content::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+  }
+
+  .scroll-element,
+  .scroll-element div {
+    position: absolute;
+    z-index: 10;
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: content-box;
+  }
+
+  .scroll-element div {
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .scroll-element {
+    display: none;
+
+    &:hover {
+      .scroll-bar {
+        background-color: $color-blue-primary;
+      }
+    }
+
+    &.scroll-x {
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: px-to-rem(4px);
+    }
+
+    &.scroll-y {
+      top: 0;
+      right: px-to-rem(4px);
+      width: px-to-rem(4px);
+      height: 100%;
+    }
+
+    &.scroll-draggable {
+      .scroll-bar {
+        background-color: $color-blue-primary;
+      }
+    }
+
+    .scroll-element_outer,
+    .scroll-element_track,
+    .scroll-bar {
+      border-radius: px-to-rem(4px);;
+      border-radius: px-to-rem(4px);;
+      border-radius: px-to-rem(4px);;
+    }
+
+    .scroll-element_track,
+    .scroll-bar {
+      opacity: 0.4;
+      filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+      filter: alpha(opacity=40);
+    }
+
+    .scroll-element_outer {
+      overflow: hidden;
+    }
+
+    .scroll-element_track {
+      background-color: $color-gray-primary;
+    }
+
+    .scroll-bar {
+      background-color: $color-blue-primary;
+    }
+  }
+
+  .scroll-element.scroll-x.scroll-scrollx_visible,
+  .scroll-element.scroll-y.scroll-scrolly_visible {
+    display: block;
+  }
+
+  .scroll-element .scroll-bar,
+  .scroll-element .scroll-arrow {
+    cursor: default;
+  }
+
+  /* update scrollbar offset if both scrolls are visible */
+  .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_track { left: -12px; }
+  .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_track { top: -12px; }
+  .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size { left: -12px; }
+  .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size { top: -12px; }
+}
+
+/*************** SCROLLBAR BASE CSS ***************/
+
+//.scroll-wrapper {
+//  position: relative;position
+//  width: 100%;width
+//  padding: 0 !important;padding
+//  overflow: hidden !important;overflow
+//}
+
+//.scroll-wrapper > .scroll-content {
+//  position: relative !important;position
+//  top: 0;top
+//  left: 0;left
+//  box-sizing: content-box !important;box-sizing
+//  width: auto !important;width
+//  max-width: none !important;max-width
+//  height: auto;height
+//  max-height: none;max-height
+//  margin: 0;margin
+//  padding: 0;padding
+//  overflow: scroll !important;overflow
+//  border: none !important;border
+//}
+
+//.scroll-wrapper > .scroll-content::-webkit-scrollbar {width
+//  height: 0;height
+//}
+
+//.scroll-element {
+//  display: none;display
+//}
+
+//.scroll-element,
+//.scroll-element div {
+//  box-sizing: content-box;box-sizing
+//}
+
+//.scroll-element.scroll-x.scroll-scrollx_visible,
+//.scroll-element.scroll-y.scroll-scrolly_visible {
+//  display: block;display
+//}
+//
+//.scroll-element .scroll-bar,
+//.scroll-element .scroll-arrow {
+//  cursor: default;cursor
+//}

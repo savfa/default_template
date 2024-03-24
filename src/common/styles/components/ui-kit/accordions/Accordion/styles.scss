@@ -1,0 +1,217 @@
+/* ==========================================================================
+   Ui-kit elements -- Accordion
+   ========================================================================== */
+
+.accordion {
+  $root: &;
+  //@include media-breakpoint-down(sm) {}
+
+  border: none;
+  border-radius: 0;
+
+  &__item {
+    margin-bottom: px-to-rem(16px);
+    overflow: hidden;
+    border: px-to-rem(2px) solid $color-gray-tertiary;
+    border-radius: px-to-rem(32px);
+    cursor: pointer;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__header {
+    @include transition-primary;
+
+    display: flex;
+    align-items: flex-start;
+    padding: px-to-rem(32px);
+    background-color: transparent;
+    transition-property: background-color;
+
+    &--active {
+      background-color: $color-gray-tertiary;
+
+      + #{$root}
+
+__content {
+        background-color: $color-gray-tertiary;
+      }
+
+      #{$root}
+
+__control {
+        .icon-svg {
+          transform: rotate(45deg);
+        }
+      }
+    }
+
+    .icon-wrap {
+      margin-right: px-to-rem(32px);
+
+      @include media-breakpoint-down(md) {
+        margin-right: px-to-rem(24px);
+      }
+
+      @include media-breakpoint-down(sm) {
+        order: 1;
+      }
+    }
+
+    .heading,
+    h4 {
+      @include media-breakpoint-down(xl) {
+        max-width: px-to-rem(625px);
+      }
+
+      @include media-breakpoint-down(md) {
+        @include h4--size($root, "m");
+
+        max-width: px-to-rem(325px);
+      }
+
+      @include media-breakpoint-down(sm) {
+        flex-basis: 100%;
+        order: 3;
+        margin-top: px-to-rem(24px);
+      }
+
+      @include h4--size($root, "l");
+
+      align-self: center;
+      max-width: px-to-rem(625px);
+      margin: 0;
+      padding-right: 10%;
+    }
+
+    @include media-breakpoint-down(md) {
+      align-items: center;
+      padding-left: px-to-rem(24px);
+    }
+
+    @include media-breakpoint-down(sm) {
+      flex-wrap: wrap;
+      padding: px-to-rem(24px);
+    }
+  }
+
+  &__control {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    margin-left: auto;
+
+    .icon-svg {
+      @include icon--size($root, "l");
+
+      margin-top: px-to-rem(16px);
+
+      @include media-breakpoint-down(lg) {
+        margin-top: 0;
+      }
+
+      @include media-breakpoint-down(md) {
+        @include icon--size($root, "m");
+      }
+    }
+
+    @include media-breakpoint-down(sm) {
+      order: 2;
+    }
+  }
+
+  &__content {
+    @include transition-primary;
+
+    padding: 0 px-to-rem(272px) px-to-rem(48px) px-to-rem(128px);
+    background-color: transparent;
+    transition-property: background-color;
+
+    &--active {
+
+    }
+
+    @include media-breakpoint-down(xl) {
+      padding-right: px-to-rem(90px);
+      padding-bottom: px-to-rem(35px);
+    }
+
+    @include media-breakpoint-down(lg) {
+      padding-right: px-to-rem(70px);
+      padding-bottom: px-to-rem(40px);
+    }
+
+    @include media-breakpoint-down(md) {
+      padding-right: px-to-rem(95px);
+      padding-bottom: px-to-rem(32px);
+      padding-left: px-to-rem(112px);
+    }
+
+    @include media-breakpoint-down(sm) {
+      padding: px-to-rem(24px) px-to-rem(24px) px-to-rem(32px);
+    }
+  }
+
+  //&__button {
+  //  position: relative;position
+  //  padding: 0 !important;padding
+  //  color: $color-blue-dark-secondary;color
+  //  background-color: transparent !important;background-color
+  //
+  //  &::before {
+  //    @extend %transition-primary;
+  //
+  //    position: absolute;position
+  //    top: px-to-rem(12px);top
+  //    right: 0;right
+  //    height: px-to-rem(24px);height
+  //    width: px-to-rem(24px);width
+  //    margin-right: 0;margin-right
+  //    transform: translateY(-50%) !important;transform
+  //    border: none !important;border
+  //    content: "";content
+  //  }
+  //
+  //  &[aria-expanded="true"] {
+  //
+  //    &::before {
+  //      background-image: url("data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M4 12C4 11.4477 4.44772 11 5 11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H5C4.44772 13 4 12.5523 4 12Z' fill='%23D5DAEA'/></svg>");background-image
+  //    }
+  //  }
+  //
+  //  &[aria-expanded="false"] {
+  //
+  //    &::before {
+  //      background-image: url("data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M12 4C12.5523 4 13 4.44772 13 5V11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H13V19C13 19.5523 12.5523 20 12 20C11.4477 20 11 19.5523 11 19V13H5C4.44772 13 4 12.5523 4 12C4 11.4477 4.44772 11 5 11H11V5C11 4.44772 11.4477 4 12 4Z' fill='%23D5DAEA'/></svg>");background-image
+  //    }
+  //  }
+  //}
+
+  //&__heading-wrap {
+  //  padding-right: px-to-rem(40px);padding-right
+  //
+  //  #{$root}
+
+__mark {
+  //    display: inline-block;display
+  //    height: px-to-rem(9px);height
+  //    margin-left: px-to-rem(8px);margin-left
+  //
+  //    &::before {
+  //      display: block;display
+  //      height: px-to-rem(8px);height
+  //      width: px-to-rem(8px);width
+  //      background-color: $color-blue-light-primary;background-color
+  //      border-radius: 50%;border-radius
+  //      content: "";content
+  //    }
+  //  }
+  //
+  //  .heading {
+  //    display: inline;display
+  //  }
+  //}
+
+}

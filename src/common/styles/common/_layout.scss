@@ -1,0 +1,55 @@
+/* ==========================================================================
+   Common -- layout
+   ========================================================================== */
+
+.layout {
+  $root: ".layout";
+
+  min-width: map-get($container-max-widths, xs);
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__header {
+    @include media-breakpoint-down(xl) {
+      min-height: px-to-rem(76px);
+    }
+
+    @include media-breakpoint-down(md) {
+      min-height: px-to-rem(56px);
+    }
+
+    min-height: px-to-rem(88px);
+  }
+
+  &__base {
+    display: flex;
+    flex-grow: 1;
+  }
+
+  &__footer {
+    min-height: px-to-rem(300px);
+  }
+
+  //&__row {
+  //  @include make-row();
+  //}
+  //
+  //&__col {
+  //  @include make-col-ready();
+  //}
+
+  &__section {
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    margin-bottom: px-to-rem(128px);
+
+    > * {
+      flex-grow: 1;
+    }
+  }
+}

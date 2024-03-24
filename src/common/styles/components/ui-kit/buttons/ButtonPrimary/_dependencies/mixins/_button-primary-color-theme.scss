@@ -1,0 +1,255 @@
+// =============================================================================
+// Mixins -- ButtonPrimary color theme
+// =============================================================================
+
+//
+// Mixin properties
+// --------------------------------------------------------------------------
+
+@mixin button-primary--color-theme($root, $color-theme, $important: null) {
+
+  //blue-primary
+  @if $color-theme == "blue-primary" {
+    color: $color-gray-tertiary $important;
+    background-color: $color-blue-primary $important;
+    box-shadow: 0 px-to-rem(14px) px-to-rem(40px) px-to-rem(-10px) $color-blue-primary $important;
+
+    #{$root}
+
+__text-wrap {
+      &::before {
+        background-color: $color-gray-tertiary $important;
+      }
+    }
+
+    &:hover,
+    &[data-state="hover"],
+    &:active,
+    &[data-state="active"] {
+      background-color: $color-blue-secondary $important;
+    }
+
+    &:active,
+    &[data-state="active"] {
+
+    }
+
+    &[disabled],
+    &[data-state="disabled"] {
+
+    }
+
+    .icon-svg {
+      &[data-type="fill"] {
+        svg {
+          fill: $color-gray-tertiary $important;
+        }
+      }
+
+      &[data-type="stroke"] {
+        svg {
+          stroke: $color-gray-tertiary $important;
+          fill-opacity: 0;
+        }
+      }
+    }
+  }
+
+  //blue-primary-light
+  @if $color-theme == "blue-primary-light" {
+    color: $color-blue-primary $important;
+    background-color: transparent $important;
+    border: px-to-rem(2px) solid $color-blue-primary $important;
+
+    &:hover,
+    &[data-state="hover"] {
+      color: $color-gray-tertiary $important;
+      background-color: $color-blue-primary $important;
+
+      .icon-svg {
+        &[data-type="fill"] {
+          svg {
+            fill: $color-gray-tertiary $important;
+          }
+        }
+
+        &[data-type="stroke"] {
+          svg {
+            stroke: $color-gray-tertiary $important;
+            fill-opacity: 0;
+          }
+        }
+      }
+    }
+
+    &:focus {
+      border: px-to-rem(2px) solid $color-blue-primary $important;
+    }
+
+    &:active,
+    &[data-state="active"] {
+
+    }
+
+    &[disabled],
+    &[data-state="disabled"] {
+      opacity: 0.3 $important;
+      pointer-events: none $important;
+    }
+
+    .icon-svg {
+      &[data-type="fill"] {
+        svg {
+          fill: $color-blue-primary $important;
+        }
+      }
+
+      &[data-type="stroke"] {
+        svg {
+          stroke: $color-blue-primary $important;
+          fill-opacity: 0;
+        }
+      }
+    }
+  }
+
+  //gray-primary
+  @if $color-theme == "gray-primary" {
+    color: $color-dark-secondary;
+    background-color: $color-gray-primary;
+
+    &:hover,
+    &[data-state="hover"],
+    &:active,
+    &[data-state="active"] {
+
+    }
+
+    &:active,
+    &[data-state="active"] {
+
+    }
+
+    &[disabled],
+    &[data-state="disabled"] {
+
+    }
+  }
+
+  //gray-tertiary
+  @if $color-theme == "gray-tertiary" {
+    color: $color-blue-primary $important;
+    background-color: $color-gray-tertiary $important;
+    border: px-to-rem(2px) solid $color-gray-tertiary $important;
+    box-shadow: 0 px-to-rem(15px) px-to-rem(32px) px-to-rem(-10px) rgb(111 117 223 / 25%) $important;
+
+    &:hover,
+    &[data-state="hover"],
+    &:active,
+    &[data-state="active"] {
+      border-color: $color-blue-primary $important;
+    }
+
+    &:active,
+    &[data-state="active"] {
+
+    }
+
+    &[disabled],
+    &[data-state="disabled"] {
+
+    }
+  }
+
+  //orange-primary
+  @if $color-theme == "orange-primary" {
+    color: $color-gray-tertiary $important;
+    background-color: $color-orange-primary $important;
+    box-shadow: 0 px-to-rem(15px) px-to-rem(32px) px-to-rem(-10px) rgba($color-orange-primary, 0.25) $important;
+
+    &:hover,
+    &[data-state="hover"],
+    &:active,
+    &[data-state="active"] {
+      background-color: #ff6b00 $important;
+    }
+
+    &:active,
+    &[data-state="active"] {
+
+    }
+
+    &[disabled],
+    &[data-state="disabled"] {
+      background-color: rgba($color-blue-primary, 0.4) $important;
+      box-shadow: none $important;
+      pointer-events: none $important;
+    }
+  }
+
+  //blue-like
+  @if $color-theme == "blue-like" {
+    color: $color-gray-tertiary $important;
+    background-color: $color-blue-primary $important;
+    box-shadow: 0 px-to-rem(14px) px-to-rem(40px) px-to-rem(-10px) $color-blue-primary $important;
+
+    #{$root}
+
+__text-wrap {
+      &::before {
+        background-color: $color-gray-tertiary $important;
+      }
+    }
+
+    &:hover,
+    &[data-state="hover"] {
+      background-color: #585ed0 $important;
+    }
+
+    &:active,
+    &[data-state="active"] {
+      background-color: $color-orange-primary $important;
+    }
+
+    &[disabled],
+    &[data-state="disabled"] {
+
+    }
+
+    .icon-svg {
+      &[data-type="fill"] {
+        svg {
+          fill: $color-gray-tertiary $important;
+        }
+      }
+
+      &[data-type="stroke"] {
+        svg {
+          stroke: $color-gray-tertiary $important;
+          fill-opacity: 0;
+        }
+      }
+    }
+  }
+}
+
+//
+// Color themes
+// --------------------------------------------------------------------------
+
+$buttonPrimaryColorThemes: (
+  "blue-primary",
+  "blue-primary-light",
+  "gray-primary",
+  "gray-tertiary",
+  "orange-primary",
+  "blue-like",
+);Colorthemes$buttonPrimaryColorThemes
+
+@mixin button-primary-color-themes($root) {
+  @each $key in $buttonPrimaryColorThemes {
+    &[data-color-theme="#{$key}"] {
+      @include button-primary--color-theme($root, $key, !important);
+    }
+  }
+}

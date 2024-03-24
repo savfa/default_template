@@ -1,0 +1,222 @@
+// =============================================================================
+// Mixins -- LinkPrimary color theme
+// =============================================================================
+
+//
+// Mixin properties
+// --------------------------------------------------------------------------
+
+@mixin link-primary--color-theme($root, $color-theme, $important: null) {
+
+  //dark-primary
+  @if $color-theme == "dark-primary" {
+    color: $color-dark-primary $important;
+
+    .icon-svg {
+      &[data-type="fill"] {
+        svg {
+          fill: $color-dark-primary $important;
+        }
+      }
+
+      &[data-type="stroke"] {
+        svg {
+          stroke: $color-dark-primary $important;
+          fill-opacity: 0;
+        }
+      }
+    }
+
+    &[data-underline="true"] {
+      &:hover,
+      &[data-state="hover"],
+      &:active,
+      &[data-state="active"] {
+        text-decoration: underline $important;
+      }
+    }
+
+    &:hover,
+    &[data-state="hover"],
+    &:active,
+    &[data-state="active"] {
+      color: $color-blue-primary $important;
+
+      .icon-svg {
+        &[data-type="fill"] {
+          svg {
+            fill: $color-blue-primary $important;
+          }
+        }
+
+        &[data-type="stroke"] {
+          svg {
+            stroke: $color-blue-primary $important;
+          }
+        }
+      }
+    }
+
+    &:active,
+    &[data-state="active"] {
+
+    }
+
+    &[disabled],
+    &[data-state="disabled"] {
+
+    }
+  }
+
+  //dark-secondary
+  @if $color-theme == "dark-secondary" {
+    color: $color-dark-secondary $important;
+
+    .icon-svg {
+      &[data-type="fill"] {
+        svg {
+          fill: $color-dark-secondary $important;
+        }
+      }
+
+      &[data-type="stroke"] {
+        svg {
+          stroke: $color-dark-secondary $important;
+          fill-opacity: 0;
+        }
+      }
+    }
+
+    &[data-underline="true"] {
+      &:hover,
+      &[data-state="hover"],
+      &:active,
+      &[data-state="active"] {
+        text-decoration: underline $important;
+      }
+    }
+
+    &:hover,
+    &[data-state="hover"],
+    &:active,
+    &[data-state="active"] {
+      color: $color-blue-primary $important;
+
+      .icon-svg {
+        &[data-type="fill"] {
+          svg {
+            fill: $color-blue-primary $important;
+          }
+        }
+
+        &[data-type="stroke"] {
+          svg {
+            stroke: $color-blue-primary $important;
+          }
+        }
+      }
+    }
+
+    &:active,
+    &[data-state="active"] {
+
+    }
+
+    &[disabled],
+    &[data-state="disabled"] {
+
+    }
+  }
+
+  //blue-primary
+  @if $color-theme == "blue-primary" {
+    color: $color-blue-primary $important;
+
+    .icon-svg {
+      &[data-type="fill"] {
+        svg {
+          fill: $color-blue-primary $important;
+        }
+      }
+
+      &[data-type="stroke"] {
+        svg {
+          stroke: $color-blue-primary $important;
+          fill-opacity: 0;
+        }
+      }
+    }
+
+    &[data-underline="true"] {
+      &:hover,
+      &[data-state="hover"],
+      &:active,
+      &[data-state="active"] {
+        text-decoration: underline $important;
+      }
+    }
+
+    &:hover,
+    &[data-state="hover"],
+    &:active,
+    &[data-state="active"] {
+      color: $color-blue-secondary $important;
+
+      .icon-svg {
+        &[data-type="fill"] {
+          svg {
+            fill: $color-blue-secondary $important;
+          }
+        }
+
+        &[data-type="stroke"] {
+          svg {
+            stroke: $color-blue-secondary $important;
+            fill-opacity: 0;
+          }
+        }
+      }
+    }
+
+    &:active,
+    &[data-state="active"] {
+
+    }
+
+    &[disabled],
+    &[data-state="disabled"] {
+
+    }
+  }
+
+  //inherit
+  @if $color-theme == "inherit" {
+    color: inherit;
+
+    &:hover,
+    &[data-state="hover"],
+    &:active,
+    &[data-state="active"] {
+      opacity: 0.6;
+    }
+  }
+}
+
+//
+// Color themes
+// --------------------------------------------------------------------------
+
+$linkPrimaryColorThemes: (
+  "dark-primary",
+  "dark-secondary",
+  "blue-primary",
+  "inherit",
+);Colorthemes$linkPrimaryColorThemes
+
+@mixin link-primary-color-themes($root) {
+  @each $key in $linkPrimaryColorThemes {
+    &[data-color-theme="#{$key}"] {
+      @include link-primary--color-theme($root, $key, !important);
+    }
+  }
+}

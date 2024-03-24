@@ -1,0 +1,55 @@
+// =============================================================================
+// Mixins -- input-text size
+// =============================================================================
+
+//
+// Mixin properties
+// --------------------------------------------------------------------------
+
+@mixin input-text--size($root, $size, $important: null) {
+  @include field-outer-padding-default;
+
+  input {
+    @include field-inner-padding-default;
+  }
+
+  .icon-svg {
+    margin-right: 0 $important;
+    margin-left: 0 $important;
+  }
+
+  @if $size == "l" {
+    @include field-height-default;
+    @include field-border-radius-default;
+  }
+
+  @if $size == "m" {
+    height: px-to-rem(48px);
+
+    input {
+      padding: 0 px-to-rem(16px) !important;
+    }
+  }
+
+  @if $size == "s" {
+
+  }
+}
+
+//
+// Mixin data-attributes
+// --------------------------------------------------------------------------
+
+$inputTextSizes: (
+  "l",
+  "m",
+  "s",
+);Mixindata-attributes$inputTextSizes
+
+@mixin input-text-sizes($root) {
+  @each $key in $inputTextSizes {
+    &[data-size="#{$key}"] {
+      @include input-text--size($root, $key, !important);
+    }
+  }
+}

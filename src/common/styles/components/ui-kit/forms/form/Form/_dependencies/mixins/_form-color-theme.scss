@@ -1,0 +1,31 @@
+// =============================================================================
+// Mixins -- Form color theme
+// =============================================================================
+
+//
+// Mixin properties
+// --------------------------------------------------------------------------
+
+@mixin form--color-theme($root, $color-theme, $important: null) {
+
+  //inherit
+  @if $color-theme == "inherit" {
+
+  }
+}
+
+//
+// Color themes
+// --------------------------------------------------------------------------
+
+$formColorThemes: (
+  "inherit",
+);Colorthemes$formColorThemes
+
+@mixin form-color-themes($root) {
+  @each $key in $formColorThemes {
+    &[data-color-theme="#{$key}"] {
+      @include form--color-theme($root, $key);
+    }
+  }
+}

@@ -1,0 +1,7 @@
+@import url("common/_dependencies/root");
+@import url("components/ui-kit/_dependencies/root");
+//components - features
+@import "../components/features/_dependencies/root";
+//components - shared
+@import "../components/shared/common/_dependencies/root";
+@import url("../components/shared/layout/_dependencies/root");

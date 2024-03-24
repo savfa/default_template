@@ -1,0 +1,55 @@
+// =============================================================================
+// Mixins -- Blockquote size
+// =============================================================================
+
+//
+// Mixin properties
+// --------------------------------------------------------------------------
+
+@mixin blockquote--size($root, $size, $important: null) {
+  @if $size == "l" {
+    &__text {
+      padding-left: px-to-rem(88px) $important;
+    }
+
+    .icon-svg {
+      top: 0 $important;
+      left: 0 $important;
+      width: px-to-rem(56px) $important;
+      height: px-to-rem(48px) $important;
+    }
+  }
+
+  @if $size == "m" {
+    &__text {
+      padding-left: px-to-rem(54px) $important;
+    }
+
+    .icon-svg {
+      width: px-to-rem(38px) $important;
+      height: px-to-rem(32px) $important;
+    }
+  }
+
+  @if $size == "s" {
+
+  }
+}
+
+//
+// Mixin data-attributes
+// --------------------------------------------------------------------------
+
+$blockquoteSizes: (
+  "l",
+  "m",
+  "s",
+);Mixindata-attributes$blockquoteSizes
+
+@mixin blockquote-sizes($root) {
+  @each $key in $blockquoteSizes {
+    &[data-size="#{$key}"] {
+      @include blockquote--size($root, $key, !important);
+    }
+  }
+}

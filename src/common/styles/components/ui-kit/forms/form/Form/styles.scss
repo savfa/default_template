@@ -1,0 +1,23 @@
+/* ==========================================================================
+   Ui-kit elements -- Form
+   ========================================================================== */
+
+.form {
+  $root: ".form";
+  //@include media-breakpoint-down(sm) {}
+
+  &__row {
+    @include make-row();
+
+    margin-bottom: px-to-rem(24px);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__col {
+    @include make-col-ready();
+    @include make-col(6);
+  }
+}

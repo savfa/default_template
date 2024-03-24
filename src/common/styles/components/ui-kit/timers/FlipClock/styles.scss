@@ -1,0 +1,44 @@
+/* ==========================================================================
+   Ui-kit elements -- FlipClock
+   ========================================================================== */
+
+.flip-clock {
+  $root: &;
+
+  @include media-breakpoint-down(md) {
+    justify-content: center;
+  }
+
+  display: flex;
+
+  &.flip-clock-wrapper {
+    margin: 0 0 px-to-rem(48px) px-to-rem(-4px);
+  }
+
+  .flip {
+    box-shadow: 0 2px 12px rgba($color-dark-primary, 0.4) !important;
+
+    .inn {
+      color: #f5f5ff;
+      background-color: $color-blue-primary;
+    }
+  }
+
+  .flip-clock-divider {
+    .flip-clock-dot {
+      background-color: $color-blue-primary !important;
+    }
+  }
+
+  ul {
+    li {
+      div {
+        &.up {
+          &::after {
+            background-color: rgba($color-dark-secondary, 0.5) !important;
+          }
+        }
+      }
+    }
+  }
+}

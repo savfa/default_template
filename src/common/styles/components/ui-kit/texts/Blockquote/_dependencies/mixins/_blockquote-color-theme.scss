@@ -1,0 +1,41 @@
+// =============================================================================
+// Mixins -- Blockquote color theme
+// =============================================================================
+
+//
+// Mixin properties
+// --------------------------------------------------------------------------
+
+@mixin blockquote--color-theme($root, $color-theme, $important: null) {
+
+  //dark-primary
+  @if $color-theme == "dark-primary" {
+    &__text {
+      .heading {
+        color: $color-dark-primary $important;
+      }
+    }
+
+    .icon-svg {
+      svg {
+        fill: $color-dark-primary $important;
+      }
+    }
+  }
+}
+
+//
+// Mixin data-attributes
+// --------------------------------------------------------------------------
+
+$blockquoteColorThemes: (
+  "dark-primary",
+);Mixindata-attributes$blockquoteColorThemes
+
+@mixin blockquote-color-themes($root) {
+  @each $key in $blockquoteColorThemes {
+    &[data-color-theme="#{$key}"] {
+      @include blockquote--color-theme($root, $key, !important);
+    }
+  }
+}

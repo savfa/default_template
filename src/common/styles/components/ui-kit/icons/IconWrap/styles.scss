@@ -1,0 +1,17 @@
+/* ==========================================================================
+   Ui-kit elements -- IconWrap
+   ========================================================================== */
+
+.icon-wrap {
+  $root: &;
+  //@include media-breakpoint-down(sm) {}
+
+  @include icon-wrap-sizes($root);
+  @include icon-wrap-color-themes($root);
+
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+}

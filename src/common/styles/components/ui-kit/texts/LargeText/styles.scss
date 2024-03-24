@@ -1,0 +1,25 @@
+/* ==========================================================================
+   Ui-kit elements -- LargeText
+   ========================================================================== */
+
+.large-text {
+  $root: &;
+  //@include media-breakpoint-down(sm) {}
+
+  @include media-breakpoint-down(md) {
+    @include large-text--size($root, "m");
+  }
+
+  @include large-text-sizes($root);
+  @include large-text-color-themes($root);
+  @include large-text--size($root, "l");
+  @include large-text--color-theme($root, "dark-primary");
+
+  &__value-primary {
+    @extend %font-weight-extraBold-800;
+  }
+
+  &__value-secondary {
+    @extend %font-weight-bold-700;
+  }
+}

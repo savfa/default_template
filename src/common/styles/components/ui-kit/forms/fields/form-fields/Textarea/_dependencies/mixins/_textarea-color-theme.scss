@@ -1,0 +1,47 @@
+// =============================================================================
+// Mixins -- Textarea color theme
+// =============================================================================
+
+//
+// Mixin properties
+// --------------------------------------------------------------------------
+
+@mixin textarea--color-theme($root, $color-theme, $important: null) {
+
+  //gray-tertiary
+  @if $color-theme == "gray-tertiary" {
+    color: $color-dark-primary;
+    background-color: $color-gray-tertiary;
+
+    textarea {
+      background-color: transparent;
+
+      &::placeholder {
+        color: $color-dark-secondary;
+        opacity: 0.7;
+      }
+    }
+  }
+
+  //default
+  @if $color-theme == "default" {
+
+  }
+}
+
+//
+// Color themes
+// --------------------------------------------------------------------------
+
+$textareaColorThemes: (
+  "default",
+  "gray-tertiary",
+);Colorthemes$textareaColorThemes
+
+@mixin textarea-color-themes($root) {
+  @each $key in $textareaColorThemes {
+    &[data-color-theme="#{$key}"] {
+      @include textarea--color-theme($root, $key);
+    }
+  }
+}

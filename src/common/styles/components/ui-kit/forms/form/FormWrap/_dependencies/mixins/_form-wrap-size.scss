@@ -1,0 +1,39 @@
+// =============================================================================
+// Mixins -- FormWrap size
+// =============================================================================
+
+//
+// Mixin properties
+// --------------------------------------------------------------------------
+
+@mixin form-wrap--size($root, $size, $important: null) {
+  @if $size == "l" {
+
+  }
+
+  @if $size == "m" {
+
+  }
+
+  @if $size == "s" {
+
+  }
+}
+
+//
+// Mixin data-attributes
+// --------------------------------------------------------------------------
+
+$formWrapSizes: (
+  "l",
+  "m",
+  "s",
+);Mixindata-attributes$formWrapSizes
+
+@mixin form-wrap-sizes($root) {
+  @each $key in $formWrapSizes {
+    &[data-size="#{$key}"] {
+      @include form-wrap--size($root, $key, !important);
+    }
+  }
+}
